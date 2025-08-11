@@ -1,157 +1,316 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Head -->
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width" />
-    <title>Heba Taha</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heba Taha | Portfolio</title>
+<style>
+
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f7f9fc;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #5a189a;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffd60a;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-text {
+    position: relative;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    font-size: 1.5rem;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Sections */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #3c096c;
+}
+
+/* Centered Image with Filter and Rounded Corners */
+.profile-img {
+    display: block;
+    margin: 20px auto;
+    width: 250px;
+    border-radius: 50%;
+    filter: brightness(0.9) contrast(1.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Image with Text Overlay */
+.overlay-container {
+    position: relative;
+    text-align: center;
+}
+
+.overlay-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(20%);
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+}
+
+/* Two Columns */
+.columns {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    gap: 20px;
+}
+
+.column {
+    width: 45%;
+    background: #e0aaff;
+    padding: 20px;
+    color: #240046;
+    height: 200px;
+    border-radius: 10px;
+}
+
+/* Table Styling */
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    font-size: 1rem;
+}
+
+th, td {
+    border: 2px solid #3c096c;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background: #c77dff;
+    color: #fff;
+}
+
+/* Image Fade Effect */
+.fade-container {
+    text-align: center;
+}
+
+.fade-img {
+    width: 400px;
+    transition: opacity 0.5s ease-in-out;
+    border-radius: 15px;
+}
+
+.fade-img:hover {
+    opacity: 0.5;
+}
+
+/* Paragraph Hover Effect */
+.hover-para {
+    font-size: 1.2rem;
+    width: 80%;
+    margin: 20px auto;
+    transition: color 0.3s, background 0.3s;
+    padding: 10px;
+}
+
+.hover-para:hover {
+    color: #fff;
+    background: #7b2cbf;
+}
+
+/* Video with Text Overlay */
+.video-overlay-section {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.video-overlay {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-overlay-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 5px black;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background: #5a189a;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+</style>
 </head>
+<body>
 
-<!-- Body -->
-<body class="Background">   
+    <!-- Fixed Navbar -->
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#table">Skills</a>
+        <a href="#video">Video</a>
+    </nav>
 
-    <!-- Navbar -->
-    <div class="Navbar">
-        <a class="active" href="#Home">Home</a>
-        <a href="#Slideshow">Slideshow</a>
-        <a href="#About">About</a>
-        <a href="#GitHub">GitHub</a>
-        <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
-    </div>
-
-    <!-- Background video -->
-    <div id="Home">
-        <video autoplay muted loop id="Typing_Video">
-            <source src="https://cdn.pixabay.com/video/2015/10/16/1046-142621379_tiny.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
+    <!-- Home Section with Video Background and Text Overlay -->
+    <section id="home" class="hero">
+        <video autoplay muted loop class="bg-video">
+            <source src="https://cdn.pixabay.com/video/2019/10/09/27706-365890968_tiny.mp4" type="video/mp4">
+            Your browser does not support the video tag.
         </video>
-    </div>
+        <div class="video-text">
+            <h1>Welcome to Heba Taha's Portfolio</h1>
+            <p>Student • Developer • Dreamer</p>
+        </div>
+    </section>
 
-    <!-- Video text -->
-    <div class="Video_Text">
-        <h1 class="white-text">Heba Taha's Portfolio</h1>
-        <strong>
-            <p class="center quote">
-                <q>
-                    Programming is the art of thinking clearly and building beautifully.
-                    <br>It’s where logic meets creativity to shape tomorrow’s world.
-                </q>
-                <br> - Heba Taha<br><br>
-                Hello and welcome! I’m Heba Taha — a tech enthusiast, lifelong learner, and aspiring full-stack developer.
-                <br><br>
-                This portfolio highlights my journey into the world of web development and the exciting things I’ve built along the way.
-                <br><br>
-                Thank you for stopping by — enjoy exploring!
-            </p>
-        </strong>
-    </div>
+    <!-- About Section with Centered Image and Filters -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Hello! I'm Heba, a passionate web development student eager to bring colorful and creative ideas to life with code.</p>
+        <img src="https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg" alt="Heba Taha" class="profile-img">
+    </section>
 
-    <!-- Slideshow -->
-    <div id="Slideshow">
-        <div id="Slideshow_Background"> 
-            <div id="Slideshow_Container">
-                <!-- Slides -->
-                <div class="mySlides fade">
-                    <img class="Slideshow_Images" src="https://cdn.pixabay.com/photo/2014/12/27/15/40/office-581131_1280.jpg">
-                    <div class="text">Passionate about clean, user-friendly design</div>
-                </div>
-                <div class="mySlides fade">
-                    <img class="Slideshow_Images" src="https://cdn.pixabay.com/photo/2016/11/30/20/58/programming-1873854_1280.png"> 
-                    <div class="text">Skilled in HTML, CSS, and JavaScript</div>
-                </div>
-                <div class="mySlides fade">
-                    <img class="Slideshow_Images" src="https://cdn.pixabay.com/photo/2015/05/31/15/14/woman-792162_1280.jpg">
-                    <div class="text">Exploring data with Python and APIs</div>
-                </div>
-                <div class="mySlides fade">
-                    <img class="Slideshow_Images" src="https://cdn.pixabay.com/photo/2015/12/09/15/51/code-1084923_1280.png">
-                    <div class="text">Working with C# and backend frameworks</div>
-                </div>
-                <div class="mySlides fade">
-                    <img class="Slideshow_Images" src="https://cdn.pixabay.com/photo/2015/01/08/18/26/man-593333_1280.jpg"> 
-                    <div class="text">Building with SQL & database logic</div>
-                </div>
-                <div class="mySlides fade">
-                    <img class="Slideshow_Images" src="https://cdn.pixabay.com/photo/2015/01/08/18/26/man-593333_1280.jpg"> 
-                    <div class="text"><a class="white-text contact" onclick="openForm()">Let’s connect and collaborate!</a></div> 
-                </div>
-                <!-- Navigation -->
-                <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="Next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
-            <br>
-            <div style="text-align: center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span> 
-                <span class="dot" onclick="currentSlide(4)"></span> 
-                <span class="dot" onclick="currentSlide(5)"></span> 
-                <span class="dot" onclick="currentSlide(6)"></span> 
-            </div>
+    <!-- Text over Image -->
+    <section class="overlay-section">
+        <div class="overlay-container">
+            <img src="https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg" alt="Overlay" class="overlay-img">
+            <div class="overlay-text">Code with Passion, Build with Purpose</div>
         </div>
-    </div>
+    </section>
 
-    <!-- About -->
-    <div class="Row" id="About">
-        <div class="Column_2">
-            <img src="https://cdn.pixabay.com/photo/2019/04/25/14/43/workplace-4155023_1280.jpg" alt="Laptop">
+    <!-- Two Column Layout -->
+    <section class="columns">
+        <div class="column">
+            <h3>Front-End</h3>
+            <p>HTML, CSS, JavaScript, Responsive Design</p>
         </div>
-        <div class="Column_1">
-            <h1>About</h1>
-            <p>
-                I’m Heba Taha, a dedicated student developer driven by curiosity and a love for code.
-                <br><br>
-                I’m currently expanding my skillset in full-stack development. I studied at
-                <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s Software Developer Boot Camp, learning:
-                HTML, CSS, JavaScript, SQL, Python, and C#.
-                <br><br>
-                My mission is to create meaningful tech solutions and grow as a collaborative and thoughtful developer.
-                <a onclick="openForm()" class="contact">Let’s work together!</a>
-            </p>
+        <div class="column">
+            <h3>Back-End</h3>
+            <p>Not Yet</p>
         </div>
-    </div>
+    </section>
 
-    <!-- GitHub -->
-    <div class="Row" id="GitHub">
-        <div class="Column_1">
-            <h1>GitHub</h1>
-            <p>Explore my coding journey and collaborative projects here:</p>
-            <p class="center"><a href="https://github.com/HebaTahaAOL" target="_blank">My GitHub</a></p>
-        </div>
-        <div class="Column_2">
-            <a href="https://github.com/HebaTahaAOL" target="_blank">
-                <img src="https://cdn.pixabay.com/photo/2021/09/23/06/59/github-6648895_1280.jpg" alt="GitHub Logo">
-            </a>
-        </div>
-    </div>
+    <!-- Table Section -->
+    <section id="table" class="section">
+        <h2>My Skills</h2>
+        <table>
+            <tr>
+                <th>Course</th>
+            </tr>
+            <tr>
+                <td>HTML & CSS</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+            </tr>
+            <tr>
+                <td>Python</td>
+            </tr>
+        </table>
+    </section>
 
-    <!-- Contact -->
-    <div id="Contact">
-        <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
-        <div class="form-popup" id="myForm" ondblclick="closeForm()">
-            <form action="" method="POST" class="form-container">
-                <h1>Contact</h1>
-                <label for="name"><b>Name</b></label>
-                <input type="text" placeholder="Type your name here" name="name" required>
-                <label for="phone"><b>Phone</b></label>
-                <input type="text" placeholder="Type your phone number here" name="phone">
-                <label for="email"><b>Email</b></label>		
-                <input type="text" placeholder="Type your email address here" name="email" required>
-                <label for="message"><b>Message</b></label>
-                <input type="text" placeholder="Type your message here" name="message">
-                <button type="submit" class="btn">SUBMIT</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
-            </form>
+    <!-- Image Fade on Hover -->
+    <section class="section">
+        <h2>Hover Effect</h2>
+        <div class="fade-container">
+            <img src="https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg" alt="Hover Image" class="fade-img">
         </div>
-    </div>
+    </section>
+
+    <!-- Paragraph with Hover -->
+    <section class="section">
+        <p class="hover-para">Hover over this paragraph to see some magic!</p>
+    </section>
+
+    <!-- Video Section with Text Overlay -->
+    <section id="video" class="section video-overlay-section">
+        <video autoplay muted loop class="video-overlay">
+            <source src="https://cdn.pixabay.com/video/2019/10/09/27706-365890968_tiny.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay-text">Technology is the future, and I'm building it one line at a time.</div>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <p class="center">&copy; Heba Taha, <a href="https://github.com/HebaTahaAOL" target="_blank">My GitHub</a></p>
+        <p>&copy; 2025 Heba Taha | All rights reserved</p>
     </footer>
 
-    <script src="js/script.js"></script>
 </body>
 </html>
